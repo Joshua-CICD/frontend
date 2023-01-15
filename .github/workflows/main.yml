@@ -1,4 +1,4 @@
-name: Deploy to ECR
+name: test, build, and deploy to ECR
 
 on:
  
@@ -6,6 +6,21 @@ on:
     branches: [ main ]
 
 jobs:
+
+  test:
+    name: cypress test
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v2
+    - uses: cypress-io/github-action@v2
+      with:
+        start: npm start
+        wait-on: "http://localhost:3000"
+        browser: chrome
+        headless: true
+
   
   build:
     
