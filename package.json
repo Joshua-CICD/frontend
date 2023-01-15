@@ -1,0 +1,33 @@
+{
+  "name": "react-three-demo",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "cypress": "^12.3.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-scripts": "2.1.8",
+    "three": "^0.137.0",
+    "wait-on": "^7.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "cypress:test": "npm run start & wait-on http-get://localhost:3000 && ./node_modules/.bin/cypress run --config-file ./cypress/config/local_config.config.js"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
