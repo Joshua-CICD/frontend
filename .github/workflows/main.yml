@@ -18,8 +18,8 @@ jobs:
       with:
         start: npm start
         wait-on: "http://localhost:3000"
+        wait-on-timeout: 6000
         browser: chrome
-        headless: true
 
   
   build:
