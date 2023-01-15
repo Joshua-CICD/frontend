@@ -23,7 +23,7 @@ jobs:
 
   
   build:
-    
+    needs: test
     name: Build Image
     runs-on: ubuntu-latest
 
