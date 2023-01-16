@@ -20,7 +20,7 @@ jobs:
         wait-on-timeout: 10000
         wait-on: "http://localhost:3000"
         browser: chrome
-        config-file: frontend/cypress/config/local_config.config.js
+        config-file: cypress/config/local_config.config.js
 
   
   build:
