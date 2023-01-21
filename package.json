@@ -7,6 +7,7 @@
   "dependencies": {
     "bindings": "^1.5.0",
     "file-uri-to-path": "^1.0.0",
+    "http-proxy-middleware": "^2.0.6",
     "react": "latest",
     "react-dom": "latest",
     "react-scripts": "2.1.8",
@@ -21,7 +22,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "cypress:test": "npm run start & wait-on http-get://localhost:3000 && ./node_modules/.bin/cypress run --config-file ./cypress/config/local_config.config.js",
-    "start-prod": "node index.js"
+    "start-prod": "node index.js",
+    "debug-server": "nodemon --inspect index.js"
   },
   "browserslist": [
     ">0.2%",
@@ -32,5 +34,6 @@
   "devDependencies": {
     "cypress": "^12.3.0",
     "gh-pages": "^2.2.0"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }

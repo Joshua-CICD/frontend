@@ -153,6 +153,12 @@ class Container extends React.Component {
                 {isMounted && <App onProgress={loadingPercentage => this.setState({ loadingPercentage })} />}
                 {isMounted && loadingPercentage === 100 && <div>Scroll to zoom, drag to rotate</div>}
                 {isMounted && loadingPercentage !== 100 && <div>Loading Model: {loadingPercentage}%</div>}
+                {/* Add a button when clicked it makes get request to backend server */}
+                <button onClick={() => {
+                    fetch('/api/health')
+                        .then(res => res.json())
+                        .then(data => console.log(data))
+                }}>Click me</button>
             </>
         )
     }
